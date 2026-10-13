@@ -73,6 +73,23 @@ From the TidyTuesday readme, descriptions as given there.
 - The list columns are stored as Python-list text, for example `['Dice Rolling', 'Hand Management']`.
 - There is no complexity or "weight" column in this cut of the data.
 
+## `bgg_clean.csv`
+
+Produced by `notebooks/01_data_cleaning_sahil.ipynb` from the two raw files: inner join on `id` (21,631 games); identifiers, links and the description dropped; zeros in the design columns and years at or below zero set to missing; `playingtime` dropped as a duplicate of `maxplaytime`; list columns stored as pipe-separated text with counts; post-release list columns and `boardgamefamily` dropped; `decade` added. No rows removed and no values capped, so each analysis makes its own choice about missing and extreme values.
+
+| Column | Meaning |
+| --- | --- |
+| `id`, `name` | Game identifier and name; not model inputs |
+| `average` | Mean user rating, the predictive target |
+| `bayes_average`, `rank`, `users_rated`, `owned`, `trading`, `wanting`, `wishing` | Post-release community outcomes; kept for description, never used as model inputs |
+| `yearpublished`, `decade` | Year of publication (missing where unknown) and its decade |
+| `minplayers`, `maxplayers` | Player count range (missing where unknown) |
+| `minplaytime`, `maxplaytime` | Play time range in minutes (missing where unknown) |
+| `minage` | Publisher's minimum age (missing where unknown) |
+| `boardgamecategory`, `boardgamemechanic` | Pipe-separated lists; `str.get_dummies(sep="|")` makes 0/1 columns |
+| `n_categories`, `n_mechanics` | Number of entries in each list |
+| `boardgamedesigner`, `boardgameartist`, `boardgamepublisher` | Pipe-separated lists of names |
+
 ## Loading
 
 ```python
@@ -81,4 +98,5 @@ import pandas as pd
 BASE = "https://raw.githubusercontent.com/24sahil25-source/BA305-BoardGameGeek-Fall2026/main/data/"
 ratings = pd.read_csv(BASE + "ratings.csv")
 details = pd.read_csv(BASE + "details.csv")
+games = pd.read_csv(BASE + "bgg_clean.csv")
 ```
