@@ -14,7 +14,7 @@ Boston University Questrom, BA305 Business Decision-Making with Data, Fall 2026.
 ## Questions
 
 - **Predictive** (from the proposal, approved in feedback): "Can we predict a board game's average rating using its characteristics, such as publication year, player count, playing time, and recommended age?" Target: `average`. Regression.
-- **Descriptive:** under revision following proposal feedback; to be finalized by Workshop 1 (Oct 16).
+- **Descriptive** (revised after proposal feedback; declared in the Workshop 1 status report): "Across board games published from the 1970s through the 2020s, are differences in design between decades moving more with changes in play time, player-count range, and minimum age, or with changes in the number and mix of game mechanics?"
 
 ## Repository map
 
