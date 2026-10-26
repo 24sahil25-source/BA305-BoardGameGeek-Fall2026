@@ -75,7 +75,7 @@ From the TidyTuesday readme, descriptions as given there.
 
 ## `bgg_clean.csv`
 
-Produced by `notebooks/01_data_cleaning_sahil.ipynb` from the two raw files: inner join on `id` (21,631 games); identifiers, links and the description dropped; zeros in the design columns and years at or below zero set to missing; `playingtime` dropped as a duplicate of `maxplaytime`; list columns stored as pipe-separated text with counts; post-release list columns and `boardgamefamily` dropped; `decade` added. No rows removed and no values capped, so each analysis makes its own choice about missing and extreme values.
+Produced by `notebooks/01_data_cleaning_sahil.ipynb` from the two raw files: inner join on `id` (21,631 games); identifiers, links and the description dropped; zeros in the design columns and years at or below zero set to missing; `playingtime` dropped as a duplicate of `maxplaytime`; list columns stored as pipe-separated text with counts, missing where the list is missing; post-release list columns and `boardgamefamily` dropped; `decade` added. No rows removed and no values capped, so each analysis makes its own choice about missing and extreme values.
 
 | Column | Meaning |
 | --- | --- |
@@ -87,7 +87,7 @@ Produced by `notebooks/01_data_cleaning_sahil.ipynb` from the two raw files: inn
 | `minplaytime`, `maxplaytime` | Play time range in minutes (missing where unknown) |
 | `minage` | Publisher's minimum age (missing where unknown) |
 | `boardgamecategory`, `boardgamemechanic` | Pipe-separated lists; `str.get_dummies(sep="|")` makes 0/1 columns |
-| `n_categories`, `n_mechanics` | Number of entries in each list |
+| `n_categories`, `n_mechanics` | Number of entries in each list (missing where the list is missing) |
 | `boardgamedesigner`, `boardgameartist`, `boardgamepublisher` | Pipe-separated lists of names |
 
 ## Loading
