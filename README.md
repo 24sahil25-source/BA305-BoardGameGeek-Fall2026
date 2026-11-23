@@ -29,7 +29,7 @@ Boston University Questrom, BA305 Business Decision-Making with Data, Fall 2026.
 
 - **In Colab:** File > Open notebook > GitHub tab > this repository, or the "Open in Colab" badge at the top of a notebook. Data loads from this repository by URL; there is nothing to upload.
 - **Locally:** any Python 3 with pandas, numpy, matplotlib, seaborn, and scikit-learn (the Anaconda base environment has all of them). Same loading cell.
-- **Final deliverable:** one notebook that runs top to bottom from a fresh Colab runtime (course directives §6.3).
+- **Final deliverable:** every notebook runs top to bottom from a fresh Colab runtime and is saved with its outputs (course directives §6.3).
 
 ## AI disclosure
 
